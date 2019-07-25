@@ -1,0 +1,59 @@
+<!--Navbar-->
+<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark" [containerInside]="false">
+
+     <!-- Just an image -->
+     <mdb-navbar-brand>
+         <a class="navbar-brand" href="#">
+             <img [src]="logBrand" height="30" alt="">
+         </a>
+     </mdb-navbar-brand>
+   
+     <!-- Collapsible content -->
+     <links>
+   
+       <!-- Links -->
+       <ul class="navbar-nav mr-auto">
+         <li class="nav-item" [routerLinkActive]="['active']">
+
+          <!-- El elemento  [routerLink]="['/home']" resibe un 
+            arreglo como parametro que será la ruta que se especifico 
+            en el app.routing.ts
+          [routerLink] lo usas para definir hacia donde redirecciona el 
+          link(es suplente del href de la etiqueta a), RouterLinkActive es la clase (CSS) 
+          que usas para definir el estilo del link cuando la página esta activada. -->
+           <a class="nav-link waves-light" mdbWavesEffect [routerLink]="['/home']" >Home<span class="sr-only">(current)</span></a>
+         </li>
+         <li class="nav-item" [routerLinkActive]="['active']">
+           <a class="nav-link waves-light" mdbWavesEffect [routerLink]="['/heroes']">Héroes</a>
+        </li>
+        <li class="nav-item" [routerLinkActive]="['active']">
+          <a class="nav-link waves-light" mdbWavesEffect [routerLink]="['/about']" >About</a>
+         </li>
+   
+         <!-- Dropdown -->
+         <li class="nav-item dropdown" dropdown>
+           <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
+             Próximamente<span class="caret"></span></a>
+           <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
+             <a class="dropdown-item waves-light" mdbWavesEffect href="#">Próxima actualización</a>
+             <a class="dropdown-item waves-light" mdbWavesEffect href="#">Próxxima actualización</a>
+             <a class="dropdown-item waves-light" mdbWavesEffect href="#">Próxima actualización</a>
+             <div class="divider dropdown-divider"></div>
+             <a class="dropdown-item waves-light" mdbWavesEffect href="#">Próxima actualización</a>
+           </div>
+         </li>
+   
+       </ul>
+       <!-- Links -->
+   
+       <!-- Search form -->
+       <div class="form-inline waves-light" mdbWavesEffect>
+         <div class="md-form my-0">                                                      <!--Funcion que se activara, al ser precionada el 'enter' dentro del input, y el '#buscar_texto' sera un alias que se le pondra al input para recoger su valor(viewChild) y pasarlo como parametro a la funcion-->
+           <input class="form-control mr-sm-2" type="text" placeholder="Buscar héroe..." (keyup.enter)="buscarHeroe(buscar_texto.value)" #buscar_texto [ngStyle]="{'color': '#eaeaea'}">
+         </div>
+       </div>
+     </links>
+     <!-- Collapsible content -->
+   
+   </mdb-navbar>
+   <!--/.Navbar-->

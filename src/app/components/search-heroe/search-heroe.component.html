@@ -1,0 +1,46 @@
+<!-- Section: Blog v.2 -->
+<section class="text-center my-5 container">
+
+  <!-- Section heading -->
+  <h2 class="h1-responsive font-weight-bold my-5 fadeInDown">Resultados de la busquda: '{{this.termino}}'</h2>
+  <!-- Section description -->
+  <p class="dark-grey-text w-responsive mx-auto mb-5 fadeInDown">Duis aute irure dolor in reprehenderit in voluptate velit
+    esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
+    qui officia deserunt mollit anim id est laborum.</p>
+
+    <div class="row fadeIn" *ngIf="heroesArr.length == 0">
+      <section class="col-sm-12 col-md-12 col-lg-12 ">
+          <div class="alert alert-danger" role="alert">
+              No existen resultados con el término: <a href="#" class="alert-link">'{{termino}}'</a>. Por favor vuelva a intentarlo!.
+            </div>
+      </section>
+    </div>
+
+  <!-- Grid row -->
+  <div class="row">
+
+   
+     <!-- Usando el componente especializado
+         'app-heroetarjeta', el *ngFor  nos clonara 
+        nuevamente las tarjetas que se encuentran en el 
+      componente 'app-heroetarjeta'-->
+
+      <!-- ahora se mandara informacion desde el componente 
+      padre al componente hijo por medio del '@imput' -->
+
+      <!-- se le envia el indice de cada tarjeta, que es obtenido en el *ngFor -->
+      <app-heroetarjeta class="col-lg-4 col-md-6 mb-5 fadeIn" [heroe]="heroe" [index]="heroe.idx" *ngFor="let heroe of heroesArr"></app-heroetarjeta>
+      <!-- se le manda el valor de una variable [propieda_input]="propiedad_valor", en este caso la variable 'heroe' , que es donde se estan iterando todos los 'heroes' , por medio del *ngfor -->
+
+      <!-- al habilitar el @input desde el componente hijo
+      nos permite que donde se use la etiqueta del componente
+      especializado se pueda mandar argumentos desde el padre al hijo
+    usando el mismo nombre que se le puso a la propieda en el
+  componente hijo : @Input() heroe  -->
+
+    
+  </div>
+  <!-- Grid row -->
+
+</section>
+<!-- Section: Blog v.2 -->

@@ -1,0 +1,81 @@
+
+<div class="container">
+     <!-- News jumbotron -->
+<div class="jumbotron text-center hoverable p-4 mt-5 z-depth-2" >
+
+     <!-- Grid row -->
+     <div class="row">
+   
+       <!-- Grid column -->
+       <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4 d-flex align-items-center">
+
+         <!-- Featured image -->
+         <div class="view overlay waves-light" mdbWavesEffect>
+           <img [src]="heroe.img" class="img-fluid" alt="Sample image for first version of blog listing">
+           <a>
+             <div class="mask rgba-white-slight"></div>
+           </a>
+         </div>
+   
+       </div>
+       <!-- Grid column -->
+   
+       <!-- Grid column -->
+       <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4 text-md-left mt-3">
+   
+         <!-- Excerpt -->
+         <a href="#!" class="green-text">
+           <h6 class="h6 pb-1"><mdb-icon fas icon="mask" class="pr-1 text-center"></mdb-icon>{{heroe.casa}}</h6>
+         </a>
+   
+         <h4 class="h4 mb-4">Mi nombre es {{heroe.nombre}}</h4>
+         <hr class="my-4">
+         <p class="font-weight-normal text-justify">{{heroe.bio}}</p>
+         <p class="font-weight-normal text-justify"><strong>{{heroe.nombre}}</strong> aparecio por primera vez en: <br><strong class="text-center">{{heroe.aparicion}}</strong></p>
+         <hr class="my-4">
+         <button (click)="redirigirHeroes()" mdbBtn color="success" mdbWavesEffect>Ver todos</button>
+   
+       </div>
+       <!-- Grid column -->
+   
+        <!-- Grid column -->
+        <div class="col-sm-12 offset-md-auto col9-lg-4 col-xl-4 my-2 d-flex align-items-center justify-content-center">
+   
+          
+          <!-- /*Valida si lo que hay dentro de 
+            'heroe.casa' coincide con alguno de los
+            'case' planteados*/ -->
+            <section [ngSwitch]="heroe.casa">
+              
+              <h5 class="h5 text-muted mt-3">Pertenezco a:</h5>
+          <!-- Si el heroe pertenece a 'DC' entonces mostrara este 'div' -->
+          <div *ngSwitchCase="'DC'" class="view overlay waves-light" mdbWavesEffect>
+            <img [src]="imageHero.DC" class="img-fluid" alt="Sample image for first version of blog listing">
+            <a>
+              <div class="mask rgba-white-slight"></div>
+            </a>
+          </div>
+           <!-- Si el heroe pertenece a 'Marvel' mostrara este div -->
+           <div *ngSwitchCase="'Marvel'" class="view overlay waves-light" mdbWavesEffect>
+               <img [src]="imageHero.Marvel" class="img-fluid" alt="Sample image for first version of blog listing">
+               <a>
+                 <div class="mask rgba-white-slight"></div>
+               </a>
+             </div>
+
+          </section>
+    
+        </div>
+        <!-- Grid column -->
+     </div>
+     <!-- Grid row -->
+   
+   </div>
+   <!-- News jumbotron -->
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>

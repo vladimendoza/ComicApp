@@ -1,0 +1,36 @@
+
+<!-- Componente especializado , que sera encargado de mostrar las tarjetas
+  por medio de 'input'-->
+
+
+
+          <!-- Featured image -->
+          <div class="view overlay rounded z-depth-2 mb-4 waves-light" mdbWavesEffect>
+            <img class="img-fluid" [src]="heroe.img" alt="Sampl e image">
+            <a>                   <!--las [] indican que ese atributo 'src' sera manejado y renderizado por angular-->
+              <div class="mask rgba-white-slight"></div>
+            </a>
+          </div> 
+          <!-- Category -->
+          <a href="#!" class="deep-orange-text">
+            <h6 class="font-weight-bold mb-3"><mdb-icon fas icon="mask" size="lg" class="mr-1"></mdb-icon>{{ heroe.casa }}
+ 
+            </h6>
+          </a>
+          <!-- Post title -->
+          <h4 class="font-weight-bold mb-3"><strong>{{ heroe.nombre }}</strong></h4>
+          <!-- Post data --> 
+          <p><a class="font-weight-bold">Aparición en</a>,{{ heroe.aparicion}}</p>
+          <!-- Excerpt -->
+          <p class="dark-grey-text">{{ heroe.bio | slice:0:100 }}...</p>
+          <!-- Read more button -->
+ 
+          <!-- para obtener el 'id' de cada heroe y asi ser redireccionado 
+         a los detalles de cada uno, es necesario pasarle un 'id'(index => i) como parametro
+         a nuestra funcion en este caso al ser un arreglo le pasaremos el index 
+         de cada uno (revisar el *ngFor), ya que es  un arreglo de objetos y van
+          de 0-7 -->
+          <button (click)="detailHeroe()" mdbBtn color="deep-orange" cli rounded="true" mdbWavesEffect>Read more</button>
+    
+
+        

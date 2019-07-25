@@ -1,0 +1,12 @@
+.navbar {
+  background-image: linear-gradient(to right bottom, #29323c, #313a45, #38434f, #404c59, #485563) !important;
+}
+
+.md-form input[type="text"] {
+  border-bottom: 1px solid #606972 !important;
+}
+
+.md-form input[type=text]:focus:not([readonly]){
+     box-shadow: 0 1px 0 0 #eaeaea !important;
+     border-bottom: 1px solid #eaeaea !important;
+}
